@@ -1,0 +1,68 @@
+﻿using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("1 – Online Store Order");
+        Console.WriteLine("2 – Cinema Ticket");
+        Console.WriteLine("3 – Gym Membership");
+        Console.Write("Choose an option (1-3): ");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        if (choice == 1)
+        {
+            Console.Write("Enter Product Name: ");
+            string productName = Console.ReadLine();
+
+            Console.Write("Enter Quantity: ");
+            int quantity = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter Price per Item: ");
+            double pricePerItem = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter Discount Percentage: ");
+            double discountPercentage = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter Delivery Distance in km: ");
+            double deliveryDistance = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter First Letter of Payment Method: ");
+            char paymentMethod = Convert.ToChar(Console.ReadLine());
+
+            Console.Write("Is Express Delivery (true/false): ");
+            bool isExpressDelivery = Convert.ToBoolean(Console.ReadLine());
+
+            double totalPrice = quantity * pricePerItem;
+            double discountAmount = totalPrice * (discountPercentage / 100);
+            double finalPrice = totalPrice - discountAmount;
+
+            Console.WriteLine("\n--- Order Summary ---");
+            Console.WriteLine("Product Name: " + productName);
+            Console.WriteLine("Quantity: " + quantity);
+            Console.WriteLine("Price per Item: " + pricePerItem);
+            Console.WriteLine("Discount Percentage: " + discountPercentage);
+            Console.WriteLine("Delivery Distance: " + deliveryDistance + " km");
+            Console.WriteLine("Payment Method (First Letter): " + paymentMethod);
+            Console.WriteLine("Express Delivery: " + isExpressDelivery);
+
+            Console.WriteLine("\n--- Price Details ---");
+            Console.WriteLine("Total Price: " + totalPrice);
+            Console.WriteLine("Discount Amount: " + discountAmount);
+            Console.WriteLine("Final Price: " + finalPrice);
+
+            Console.WriteLine("\n--- Data Types ---");
+            Console.WriteLine("Type of quantity: " + quantity.GetType());
+            Console.WriteLine("Type of pricePerItem: " + pricePerItem.GetType());
+            Console.WriteLine("Type of isExpressDelivery: " + isExpressDelivery.GetType());
+        }
+        else
+        {
+            Console.WriteLine("Only Option 1 implemented.");
+        }
+
+        Console.WriteLine("\nPress any key to exit...");
+        Console.ReadKey();
+    }
+}
